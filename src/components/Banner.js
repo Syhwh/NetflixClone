@@ -1,22 +1,19 @@
-import React from 'react'
-import { useFetchMovies } from '../hooks/useFetchMovies'
+import React from 'react';
+import { useFetchMovies } from '../hooks/useFetchMovies';
 import { requests } from '../helpers/requestsEndPoints';
 import { truncate } from '../helpers/stringActions';
 
-const baseUrl = 'https://image.tmdb.org/t/p/original'
+const baseUrl = 'https://image.tmdb.org/t/p/original';
 
 export const Banner = () => {
 	const movies = useFetchMovies(requests.fetchTrending)
-	console.log(movies.length === 0)
 	const movie = movies[Math.floor(Math.random() * movies.length)]
 	const image = `"${baseUrl}${movie?.backdrop_path}"`
-
-	console.log('render')
 
 	if (movies.length === 0) {
 		return (<h1>Loading</h1>)
 	}
-	console.log(image)
+
 	return (
 		<header
 			style={{
