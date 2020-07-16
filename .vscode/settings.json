@@ -1,5 +1,8 @@
 {
 	"cSpell.ignoreWords": [
 		"netflixclone"
-	]
+	],
+	"emmet.includeLanguages": {
+		"javascript":"javascriptreact"
+	}
 }

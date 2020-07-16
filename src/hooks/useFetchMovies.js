@@ -1,16 +1,13 @@
 import { useState, useEffect } from 'react'
-import { requestUrl } from '../helpers/axios'
+import { fetchMovies } from '../helpers/fetchMovies'
+
 
 export const useFetchMovies = (fetchURL) => {
 	const [movies, setMovies] = useState([])
-
 	useEffect(() => {
-		async function fetchMovies() {
-			const { data } = await requestUrl.get(fetchURL)
-			setMovies(data.results)
-		}
-		fetchMovies()
-
+		fetchMovies(fetchURL)
+			.then((movies) => setMovies(movies))
+			.catch(err => console.warn(err))
 	}, [fetchURL])
 	return movies
 }

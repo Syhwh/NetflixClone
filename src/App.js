@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import { MoviesRows } from './components/MoviesRows';
-import { requests } from './helpers/requestsEndPoints';
+import { MainPage } from './components/MainPage';
+import { Banner } from './components/Banner';
 
 function App() {
   return (
     <div className="App">
-      <h1>Movies</h1>
-      <MoviesRows title={'New'} fetchURL={requests.fetchTrending} />
+      <Banner />
+      <MainPage />
     </div>
   );
 }

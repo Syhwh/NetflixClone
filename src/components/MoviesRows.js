@@ -2,21 +2,24 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useFetchMovies } from '../hooks/useFetchMovies'
 
+
 const base_url = 'https://image.tmdb.org/t/p/original'
 
-export const MoviesRows = ({ title, fetchURL }) => {
+export const MoviesRows = ({ title, fetchURL, isLarge }) => {
 	const movies = useFetchMovies(fetchURL)
-	console.log(movies)
 	return (
-		<div>
+		<div className='rowContainer'>
 			<h2>{title}</h2>
-			<div>
-				{movies.map(({ id, poster_path, title, name }) => (
-					<li key={id}>
-						<h2>{title}</h2>
-						<img src={`${base_url}${poster_path}`} alt={name} />
-					</li>
-				))
+			<div className='postersContainer' >
+				{
+					movies.map(({ id, poster_path, name, backdrop_path }) => (
+						<img
+							key={id}
+							className={`rowPoster ${isLarge && 'largePoster'}`}
+							src={`${base_url}${isLarge ? poster_path : backdrop_path}`}
+							alt={name}
+						/>
+					))
 				}
 			</div>
 		</div>
@@ -24,6 +27,8 @@ export const MoviesRows = ({ title, fetchURL }) => {
 }
 
 MoviesRows.propTypes = {
-
+	title: PropTypes.string,
+	fetchURL: PropTypes.string,
+	isLarge: PropTypes.bool
 }
 
