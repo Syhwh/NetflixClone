@@ -97,3 +97,40 @@ transform:scale(1.08)
     #111
   );
 }
+
+/* Navbar style */
+
+.nav{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  height: 30px;
+  justify-content: space-between;
+  background-image: linear-gradient(to top, rgba(133, 130, 130, 0), #111);
+  /* background-image: linear-gradient(
+    180deg
+    transparent,
+    #111,
+    rgba(37,37,37,0.61),
+  ); */
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+.logo{
+  position: fixed;
+  left: 20px;
+  width: 90px;
+  object-fit: contain;
+}
+.avatar{
+  position: fixed;
+  right: 20px;
+  width: 30px;
+  object-fit: contain;
+}
+.navBlack{
+background-color: #111;
+}
