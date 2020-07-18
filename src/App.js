@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,13 +8,12 @@ import {
 import { MainPage } from './components/MainPage';
 import { Home } from './components/Home';
 import { SearchResults } from './components/SearchResults';
-
-import './App.css';
-import { stateReducer } from './reducers/stateReducer';
 import { URLProvider } from './helpers/searchUrlContext';
 
+import './App.css';
+
 function App() {
-  useReducer(stateReducer, [])
+
   return (<>
     <Router>
       <Switch>

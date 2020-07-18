@@ -7,7 +7,6 @@ import { MoviesRows } from './MoviesRows';
 export const SearchResults = () => {
 
 	const { setUrl, url } = useContext(SearchUrlContext)
-	console.log(url)
 	return (
 		<div className="main">
 			<NavBar />

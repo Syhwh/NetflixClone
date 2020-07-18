@@ -13,7 +13,6 @@ export const SearchBar = () => {
 	}
 
 	const handleOnsubmit = (e) => {
-		console.log(setUrl)
 		e.preventDefault()
 		setUrl(`${searchEndpoint.search}${search}`)
 		setSearch('')
