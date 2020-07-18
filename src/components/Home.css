@@ -1,0 +1,52 @@
+.home{
+  background-color: #111;
+  color: white;
+  background-image: url("../assets/backgroundHome.jpg");
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+	align-items: center;
+	position: absolute;
+z-index: 1;
+}
+.container{
+	margin-top: 100px;
+	padding: 50px 5%;
+	margin-bottom: 0;
+	color: #fff;
+	padding: 70px 45px;
+	width: 100%;
+	padding: 75px 0;
+	margin: 0 auto;
+	text-align: center;
+	background-color:rgba(47, 45, 45, 0.822);
+}
+
+.layout{
+	position: absolute;
+	background-image: linear-gradient(
+		to top,rgba(0,0,0,.8) 0,
+		rgba(0,0,0,0) 50%,
+		rgba(0,0,0,0) 75%,
+		rgba(0,0,0,.8) 100%);
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.cardTitle {
+	font-size: 3.125rem;
+	font-weight: 800;
+	max-width: 640px;
+	margin: 0 auto;
+	z-index: -31;
+}
+
+.cardSubtitle {
+	font-size: 1.625rem;
+	margin: 1rem auto;
+}
+

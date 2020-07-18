@@ -1,0 +1,37 @@
+
+.nav{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  height: 30px;
+  justify-content: space-between;
+  background-image: linear-gradient(to top, rgba(133, 130, 130, 0), #111);
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+.logo{
+  position: fixed;
+  left: 20px;
+  width: 90px;
+  object-fit: contain;
+}
+.avatar{
+  position: fixed;
+  right: 20px;
+  width: 30px;
+  object-fit: contain;
+}
+.navBlack{
+background-color: #111;
+}
+
+.secondaryNavigation{
+  display: flex;
+  justify-content: flex-end;
+    position: fixed;
+    right: 4%;
+    object-fit: contain;
+}
