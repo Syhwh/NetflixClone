@@ -6,14 +6,14 @@ import { truncate } from '../helpers/stringActions';
 const baseUrl = 'https://image.tmdb.org/t/p/original';
 
 export const Banner = () => {
-	const movies = useFetchMovies(requests.fetchTrending)
+	const { name, url } = requests[0]
+	const movies = useFetchMovies(url)
 	const movie = movies[Math.floor(Math.random() * movies.length)]
 	const image = `"${baseUrl}${movie?.backdrop_path}"`
 
 	if (movies.length === 0) {
-		return (<h1>Loading</h1>)
+		return (<h1>Loading...</h1>)
 	}
-
 	return (
 		<header
 			style={{

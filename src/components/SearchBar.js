@@ -1,35 +1,34 @@
-import React, { useState } from 'react';
-import { requestUrl } from '../helpers/axios';
-import { requests } from '../helpers/requestsEndPoints';
+import React, { useState, useContext } from 'react';
+import { useHistory } from "react-router-dom";
+import { SearchUrlContext } from '../helpers/searchUrlContext';
+import { searchEndpoint } from '../helpers/requestsEndPoints';
 
 export const SearchBar = () => {
-
+	const history = useHistory()
 	const [search, setSearch] = useState('')
+	const {setUrl} = useContext(SearchUrlContext)
 
 	const handleOnchage = (e) => {
 		setSearch(e.target.value)
 	}
 
 	const handleOnsubmit = (e) => {
+		console.log(setUrl)
 		e.preventDefault()
+		setUrl(`${searchEndpoint.search}${search}`)
+		setSearch('')
+		history.push('/results')
+	}
 
-		const fetchSearch = async () => {
-			const { data } = await requestUrl.get(`${requests.search}${search}`)
-			return (data.results)
-		}
-	fetchSearch()
-	setSearch('')
-}
-
-return (
-	<div className="searchInput">
-		<form onSubmit={handleOnsubmit}>
-			<input
-				placeholder="Search..."
-				value={search}
-				onChange={handleOnchage}
-			/>
-		</form>
-	</div>
-)
+	return (
+		<div className="searchInput">
+			<form onSubmit={handleOnsubmit}>
+				<input
+					placeholder="Search..."
+					value={search}
+					onChange={handleOnchage}
+				/>
+			</form>
+		</div>
+	)
 }
